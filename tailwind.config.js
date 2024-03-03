@@ -14,6 +14,7 @@ module.exports = {
       },
       fontFamily: {
         Madimi: ['Madimi One', 'sans-serif'],
+        Poppins: ['Poppins', 'sans-serif'],
       },
     },
   },
