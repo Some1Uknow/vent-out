@@ -1,6 +1,6 @@
 const Card = ({ title, subtitle, description, icon }) => {
   return (
-    <div className="block max-w-xs p-3 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-pink-800 dark:border-gray-700 dark:hover:bg-gray-700">
+    <div className="block max-w-xs p-3 bg-white border border-gray-200 rounded-lg shadow dark:bg-pink-800 dark:border-gray-700 dark:hover:bg-pink-900">
       <h5 className="mb-0.5 text-xl font-bold tracking-tight text-gray-900 dark:text-white flex flex-row items-center justify-center gap-2">
         {title} <span>{icon}</span>
       </h5>
@@ -11,3 +11,4 @@ const Card = ({ title, subtitle, description, icon }) => {
 };
 
 export default Card;
+

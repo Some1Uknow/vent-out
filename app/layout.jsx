@@ -1,3 +1,4 @@
+import { NextAuthProvider } from "./Provider";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 
@@ -11,10 +12,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <div>
-          <div>
-            <Navbar />
-          </div>
-          <main>{children}</main>
+          <NextAuthProvider>
+            
+              <Navbar />
+           
+            <main>{children}</main>
+          </NextAuthProvider>
         </div>
       </body>
     </html>
