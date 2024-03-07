@@ -1,6 +1,6 @@
 import { NextAuthProvider } from "./Provider";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+import Headbar from "@/components/Headbar";
 
 export const metadata = {
   title: "Vent Out",
@@ -13,9 +13,7 @@ export default function RootLayout({ children }) {
       <body>
         <div>
           <NextAuthProvider>
-            
-              <Navbar />
-           
+            <Headbar />
             <main>{children}</main>
           </NextAuthProvider>
         </div>
