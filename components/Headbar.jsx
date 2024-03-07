@@ -2,11 +2,11 @@
 import { RiEmotionHappyFill } from "react-icons/ri";
 import { useSession, signIn, signOut } from "next-auth/react";
 
+import Createpost from "./Createpost";
+
 const Headbar = () => {
   const { data: session, status } = useSession();
-
-  const createPost = () => {
-  } 
+  
 
   return (
     <nav className="bg-pink-800 p-3.5 flex justify-between items-center">
@@ -22,9 +22,7 @@ const Headbar = () => {
           >
             <span className="font-Madimi text-2xl m-2 p-4">Sign Out</span>
           </button>
-          <button onClick={()=> createPost()} className="transition hover:duration-300 hover:bg-pink-900 text-white bg-transparent font-bold py-2 px-4 rounded">
-            <span className="font-Madimi text-2xl m-2 p-4">Create Post</span>
-          </button>
+         <Createpost/>
         </div>
       ) : (
         <button
