@@ -25,8 +25,8 @@ const ProfileCard = () => {
         </div>
       </div>
       <div className="p-1">
-        <p className="text-xs text-gray-600 p-1">
-          This is user's bio, they can put all kind of stuff abt themselves
+        <p className="text-sm text-gray-600 p-1">
+            An average teenager fighting through life.
         </p>
         <div className="flex flex-row justify-between">
           <p className=" text-gray-600 ">
