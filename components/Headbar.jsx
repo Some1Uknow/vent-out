@@ -1,16 +1,23 @@
 "use client";
 import { RiEmotionHappyFill } from "react-icons/ri";
 import { useSession, signIn, signOut } from "next-auth/react";
-
+import Profilebtn from "./Profilebtn";
 import Createpost from "./Createpost";
+import { useRouter } from "next/navigation";
 
 const Headbar = () => {
   const { data: session, status } = useSession();
-  
+  const handleClick = () => {
+    router.push('/');
+  };
+  const router = useRouter();
 
   return (
     <nav className="bg-pink-800 p-3.5 flex justify-between items-center">
-      <div className="text-white text-6xl font-Madimi font-bold flex flex-row">
+      <div
+        onClick={handleClick}
+        className="text-white text-6xl font-Madimi font-bold flex flex-row cursor-pointer"
+      >
         VentOut&nbsp;
         <RiEmotionHappyFill />
       </div>
@@ -22,7 +29,8 @@ const Headbar = () => {
           >
             <span className="font-Madimi text-2xl m-2 p-4">Sign Out</span>
           </button>
-         <Createpost/>
+          <Createpost />
+          <Profilebtn />
         </div>
       ) : (
         <button
