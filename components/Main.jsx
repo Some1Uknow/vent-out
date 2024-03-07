@@ -1,4 +1,3 @@
-import React from "react";
 import ProfileCard from "./ProfileCard";
 import Posts from "./Posts";
 import News from "./News";
