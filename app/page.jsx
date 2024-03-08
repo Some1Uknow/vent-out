@@ -1,6 +1,6 @@
 'use client'
 import Home from "@/components/Home";
-import Main from "@/app/main/page";
+import Main from "@/components/Main";
 import { useSession } from "next-auth/react";
 
 const Page = () => {

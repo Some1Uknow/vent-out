@@ -1,6 +1,6 @@
-import ProfileCard from "../../components/ProfileCard";
-import Posts from "../../components/Posts";
-import News from "../../components/News";
+import ProfileCard from "./ProfileCard";
+import Posts from "./Posts";
+import News from "./News";
 
 const Main = () => {
   return (
