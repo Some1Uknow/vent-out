@@ -1,11 +1,10 @@
-"use client";
+'use client'
 import Home from "@/components/Home";
-import Main from "@/components/Main";
+import Main from "@/app/main/page";
 import { useSession } from "next-auth/react";
 
 const Page = () => {
-  const { data: session, status } = useSession();
-
+  const { status } = useSession();
   return <>{status === "authenticated" ? <Main /> : <Home />}</>;
 };
 

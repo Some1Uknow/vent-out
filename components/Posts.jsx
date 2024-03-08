@@ -15,7 +15,7 @@ const Posts = ({ posts }) => {
           <Image
             alt="user-image"
             className="w-10 h-10 rounded-full inline-block"
-            src={session.user.image}
+            src={session?.user.image}
             width={40}
             height={40}
           />
@@ -41,7 +41,6 @@ const Posts = ({ posts }) => {
           </button>
         </div>
       </div>
-      {/* ))} */}
     </div>
   );
 };

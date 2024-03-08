@@ -1,8 +1,9 @@
-'use client'
-import{ useState } from "react";
+"use client";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
-const EditProfile = () => {
 
+
+const EditProfile = () => {
   const router = useRouter();
 
   const [bio, setBio] = useState("");
@@ -17,18 +18,18 @@ const EditProfile = () => {
     console.log("Age:", age);
     console.log("Gender:", gender);
     console.log("Country:", country);
-    router.push('/');
+    router.push("/");
   };
 
   return (
     <div className="w-3/4 mt-5 mx-auto h-3/4">
       <form
         onSubmit={handleSubmit}
-        className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 ml-16"
+        className="bg-gray-100 shadow-md rounded px-8 pt-6 pb-8 mb-4 p-1 ml-16"
       >
-        <div className="mb-4">
+        <div className="mb-4 p-1">
           <label
-            className="block text-gray-700 text-4xl font-bold mb-4 font-Madimi"
+            className="block text-gray-700 text-4xl font-bold mb-2 font-Madimi"
             htmlFor="bio"
           >
             Bio
@@ -42,9 +43,9 @@ const EditProfile = () => {
             onChange={(e) => setBio(e.target.value)}
           />
         </div>
-        <div className="mb-4">
+        <div className="mb-4 p-1">
           <label
-            className="block text-gray-700 text-4xl font-bold mb-4 font-Madimi"
+            className="block text-gray-700 text-4xl font-bold mb-2 font-Madimi"
             htmlFor="age"
           >
             Age
@@ -59,9 +60,9 @@ const EditProfile = () => {
             onChange={(e) => setAge(e.target.value)}
           />
         </div>
-        <div className="mb-4">
+        <div className="mb-4 p-1">
           <label
-            className="block text-gray-700 text-4xl font-bold mb-4 font-Madimi"
+            className="block text-gray-700 text-4xl font-bold mb-2 font-Madimi"
             htmlFor="gender"
           >
             Gender
@@ -76,9 +77,9 @@ const EditProfile = () => {
             onChange={(e) => setGender(e.target.value)}
           />
         </div>
-        <div className="mb-4">
+        <div className="mb-4 p-1">
           <label
-            className="block text-gray-700 text-4xl font-bold mb-4 font-Madimi"
+            className="block text-gray-700 text-4xl font-bold mb-2 font-Madimi"
             htmlFor="country"
           >
             Country

@@ -1,7 +1,7 @@
-'use client'
+"use client";
 import React, { useState } from "react";
 
-const CreatePost = () => {
+const makePost = () => {
   const [post, setPost] = useState("");
 
   const handleChange = (e) => {
@@ -15,22 +15,22 @@ const CreatePost = () => {
   };
 
   return (
-    <div className=" w-3/4 mt-5 mx-auto h-3/4">
+    <div className=" w-3/5 mt-5 mx-auto h-full">
+      <label
+        className="block text-gray-700 text-6xl font-bold mb-6 mx-auto font-Madimi ml-16"
+        htmlFor="post"
+      >
+        Release your thoughts here 😊
+      </label>
       <form
         onSubmit={handleSubmit}
-        className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 ml-16"
+        className="bg-gray-200 shadow-md rounded px-8 pt-6 pb-8 mb-4 ml-16"
       >
         <div className="mb-4">
-          <label
-            className="block text-gray-700 text-6xl font-bold mb-6 font-Madimi"
-            htmlFor="post"
-          >
-            Release your thoughts here 😊
-          </label>
           <textarea
             id="post"
             name="post"
-            className="shadow appearance-none border rounded w-full h-3/4 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline font-Poppins"
+            className="shadow appearance-none border rounded w-full h-80 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline font-Poppins"
             placeholder="Describe your traumatic incidents/mental health problems/other issues"
             value={post}
             onChange={handleChange}
@@ -50,4 +50,4 @@ const CreatePost = () => {
   );
 };
 
-export default CreatePost;
+export default makePost;

@@ -11,8 +11,8 @@ const editProfile = () => {
   } 
   return (
     <>
-         <button onClick={()=> editProfile()} className="transition hover:duration-300 hover:bg-pink-900 text-white bg-transparent font-bold py-2 px-4 rounded">
-            <span className="font-Madimi text-2xl m-2 p-4">Edit Profile</span>
+         <button onClick={()=> editProfile()} className="transition hover:duration-300 hover:bg-gray-300 text-black bg-transparent font-bold py-2 rounded">
+            <span className="font-Madimi text-xl m-2 p-4">Edit Profile</span>
           </button>
     </>
   )

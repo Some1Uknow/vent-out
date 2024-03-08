@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+'use client'
+import { useEffect, useState } from 'react';
 
 const News = () => {
   const [articles, setArticles] = useState([]);
@@ -7,7 +8,7 @@ const News = () => {
     const getNews = async () => {
       try {
         const res = await fetch(
-          'https://newsapi.org/v2/everything?q=depression&sortBy=relevancy&totalResults=25&page=5&pageSize=5&apiKey=219ecc53ba78403382ec3b55fac2f3cd'
+          `https://newsapi.org/v2/everything?q=depression&sortBy=relevancy&totalResults=25&page=5&pageSize=5&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`
         );
         const data = await res.json();
         setArticles(data.articles);
