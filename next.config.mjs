@@ -4,15 +4,22 @@ const nextConfig = {
         remotePatterns: [
           {
             protocol: 'https',
-            hostname: 'lh3.googleusercontent.com',
+            hostname: 'lh3.googleusercontent.com', 
+          },
+          {
+            protocol: 'https',
+            hostname: 'hips.hearstapps.com',
+          },
+          {
+            protocol: 'https',
+            hostname: 'static.vecteezy.com', 
+          },
+          {
+            protocol: 'https',
+            hostname: 'i.redd.it',
           },
         ],
       },
-      experimental: { appDir: true, serverComponentsExternalPackages: ["mongoose"] },
-      webpack(config) {
-          config.experiments = { ...config.experiments, topLevelAwait: true };
-          return config;
-      }
 };
 
 export default nextConfig;
