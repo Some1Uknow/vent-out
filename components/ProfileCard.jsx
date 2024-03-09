@@ -12,7 +12,7 @@ const ProfileCard = () => {
 
   return (
     <div className="flex flex-col items-center">
-    <section className=" shadow-md rounded-lg m-4 mr-1 p-3 h-max w-80 max-w-full">
+    <section className=" shadow-md rounded-lg m-4 mr-1 p-3 h-max w-80 max-w-full bg-white">
       <div className="flex flex-row p-1">
         <Image
           className="mr-3 rounded-full inline-block"
@@ -46,7 +46,7 @@ const ProfileCard = () => {
         </div>
       </div>
     </section>
-    <div className=" border-t-2 flex flex-row shadow-md rounded-lg mt-0 m-4 mr-1 p-3 h-max w-80 max-w-full">
+    <div className=" border-t-2 flex flex-row shadow-md rounded-lg mt-0 m-4 mr-1 p-3 h-max w-80 max-w-full bg-white">
     
     <CreatePost />
     <Profilebtn />
