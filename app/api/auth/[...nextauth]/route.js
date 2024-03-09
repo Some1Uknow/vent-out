@@ -1,5 +1,7 @@
 import NextAuth from "next-auth/next";
 import GoogleProvider from "next-auth/providers/google";
+import User from "@/models/user";
+import connectDB from "@/lib/mongodb";
 
 const authOptions = {
   providers: [
@@ -8,8 +10,24 @@ const authOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
   ],
+  callbacks: {
+    async signIn({ user, account, profile }) {
+      await connectDB();
+      // console.log("User", user, "Account", account, "profile", profile);
+      const existingUser = await User.findOne({ email: user.email });
+      if (!existingUser) {
+        try {
+          const { email, name, googleId } = profile;
+          await User.create({ name, email, googleId });
+        } catch (error) {
+          console.error("Error creating user:", error);
+        }
+      }
+      return user;
+    },
+  },
 };
 
 const handler = NextAuth(authOptions);
 
-export { handler as GET, handler as POST }; 
+export { handler as GET, handler as POST };
