@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-
 const EditProfile = () => {
   const router = useRouter();
 
@@ -11,14 +10,34 @@ const EditProfile = () => {
   const [gender, setGender] = useState("");
   const [country, setCountry] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Send data to backend
-    console.log("Bio:", bio);
-    console.log("Age:", age);
-    console.log("Gender:", gender);
-    console.log("Country:", country);
-    router.push("/");
+
+    const formData = {
+      bio,
+      age,
+      gender,
+      country,
+    };
+
+    try {
+      const response = await fetch("/api/edit-profile", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        console.log("Profile updated successfully");
+        router.push("/");
+      } else {
+        console.error("Failed to update profile");
+      }
+    } catch (error) {
+      console.error("Error updating profile:", error);
+    }
   };
 
   return (
@@ -53,7 +72,7 @@ const EditProfile = () => {
           <input
             id="age"
             name="age"
-            type="text"
+            type="number"
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline font-Poppins"
             placeholder="Enter your age"
             value={age}

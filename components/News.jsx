@@ -20,7 +20,7 @@ const News = () => {
   }, []);
 
   return (
-    <section className="shadow-md rounded-lg m-4 ml-1 p-3 w-72 max-w-full h-max">
+    <section className="shadow-md rounded-lg m-4 ml-1 p-3 w-72 max-w-full h-max bg-white">
       <h1 className="text-xl font-bold p-1">Health News</h1>
       <ul>
         {articles.map((article, index) => (

@@ -8,7 +8,7 @@ const Posts = ({ posts }) => {
   const { data: session } = useSession();
 
   return (
-    <div className="w-3/6 m-2 p-2 flex flex-col">
+    <div className="w-9/10 m-2 mt-0 p-2 flex flex-col">
       {/* {posts.map((post) => ( */}
       <div key="" className="bg-white shadow-md rounded-lg p-6">
         <div className="flex items-center space-x-4">
