@@ -1,7 +1,12 @@
-import mongoose, { Schema, model, models } from "mongoose";
+import mongoose from "mongoose";
+const { Schema, models } = mongoose;
 
 const userProfileSchema = new Schema(
   {
+    _id: {
+      type: Schema.Types.ObjectId,
+      auto: true,
+    },
     bio: {
       type: String,
       required: true,

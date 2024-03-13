@@ -1,8 +1,9 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 
-const MakePost = () => {
+const MakePost = ({params}) => {
   const [post, setPost] = useState({
     title: "",
     description: "",
@@ -17,18 +18,24 @@ const MakePost = () => {
   };
 
   const router = useRouter();
+  const {data:session} = useSession();
+
+  const user = params.name;
+  const author = decodeURIComponent(user);
+  const userImage = session.user.image;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(post);
 
     const formData = {
       title: post.title,
       description: post.description,
+      author: author,
+      userImage: userImage,
     };
 
     try {
-      const response = await fetch("/api/make-post", {
+      const response = await fetch(`/api/make-post/${author}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -50,12 +57,21 @@ const MakePost = () => {
 
   return (
     <div className="w-3/5 mt-5 mx-auto h-full">
-      <label className="block text-gray-700 text-6xl font-bold mb-6 mx-auto font-Madimi ml-16" htmlFor="post">
+      <label
+        className="block text-gray-700 text-6xl font-bold mb-6 mx-auto font-Madimi ml-16"
+        htmlFor="post"
+      >
         Release your thoughts here 😊
       </label>
-      <form onSubmit={handleSubmit} className="bg-gray-200 shadow-md rounded px-8 pt-6 pb-8 mb-4 ml-16">
+      <form
+        onSubmit={handleSubmit}
+        className="bg-gray-200 shadow-md rounded px-8 pt-6 pb-8 mb-4 ml-16"
+      >
         <div className="mb-4 p-1">
-          <label className="block text-gray-700 text-4xl font-bold mb-2 font-Madimi" htmlFor="title">
+          <label
+            className="block text-gray-700 text-4xl font-bold mb-2 font-Madimi"
+            htmlFor="title"
+          >
             Title
           </label>
           <input
@@ -69,7 +85,10 @@ const MakePost = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-4xl font-bold mb-2 font-Madimi" htmlFor="description">
+          <label
+            className="block text-gray-700 text-4xl font-bold mb-2 font-Madimi"
+            htmlFor="description"
+          >
             Description
           </label>
           <textarea

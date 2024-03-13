@@ -2,7 +2,10 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-const EditProfile = () => {
+const EditProfile = ({params}) => {
+
+  const userId = params.id;
+
   const router = useRouter();
 
   const [bio, setBio] = useState("");
@@ -21,7 +24,7 @@ const EditProfile = () => {
     };
 
     try {
-      const response = await fetch("/api/edit-profile", {
+      const response = await fetch(`/api/make-profile/${userId}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -39,6 +42,10 @@ const EditProfile = () => {
       console.error("Error updating profile:", error);
     }
   };
+
+  const goBack = () => {
+    router.push("/");
+  }
 
   return (
     <div className="w-3/4 mt-5 mx-auto h-3/4">
@@ -119,6 +126,13 @@ const EditProfile = () => {
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           >
             Save Changes
+          </button>
+          <button 
+          type="button"
+          onClick={goBack}
+            className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          >
+            Go back
           </button>
         </div>
       </form>

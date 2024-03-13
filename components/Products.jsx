@@ -22,16 +22,16 @@ const Products = () => {
           price="₹299"
           imgSrc="/tshirt2.png"
         />
-        <ProductCard name="Not Alone" price="₹399" imgSrc="/tshirt3.png" />
+        <ProductCard name="You are Not alone (Limited Edition)" price="₹399" imgSrc="/tshirt3.png" />
         <ProductCard
           name="Be Kind to your Mind"
           price="₹399"
           imgSrc="/tshirt4.png"
         />
         <ProductCard name="HOPE T-shirt" price="₹399" imgSrc="/1.png" />
-        <ProductCard name="Be Kind to your Mind" price="₹399" imgSrc="/2.png" />
-        <ProductCard name="Be Kind to your Mind" price="₹399" imgSrc="/3.png" />
-        <ProductCard name="Be Kind to your Mind" price="₹399" imgSrc="/4.png" />
+        <ProductCard name="Self Love club" price="₹399" imgSrc="/2.png" />
+        <ProductCard name="Just keep moving forward" price="₹399" imgSrc="/3.png" />
+        <ProductCard name="Believe in yourself" price="₹399" imgSrc="/4.png" />
       </div>
     </div>
   );
@@ -41,7 +41,7 @@ export default Products;
 
 const ProductCard = ({ name, price, imgSrc }) => {
   return (
-    <div className="flex flex-col shadow-md rounded-lg m-2 ml-0 bg-white w-max p-4 border-t">
+    <div className="flex flex-col shadow-md rounded-lg m-2 ml-0 bg-white w-9/10 p-4 border-t">
       <Image
         src={imgSrc}
         width={180}
