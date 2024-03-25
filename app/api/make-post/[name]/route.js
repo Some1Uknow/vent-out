@@ -2,10 +2,10 @@ import connectDB from "@/lib/mongodb";
 import Post from "@/models/post";
 import { NextResponse } from "next/server";
 
+
 export async function POST(request) {
   const { userImage, author, title, description } = await request.json();
   await connectDB();
-  console.log(userImage);
   await Post.create({ author , title, description, userImage });
   return NextResponse.json({ message: "Post Created" }, { status: 201 });
 }
