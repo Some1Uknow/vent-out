@@ -1,14 +1,8 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { useSession } from "next-auth/react";
 
-const MakePost = ({params}) => {
-  const [post, setPost] = useState({
-    title: "",
-    description: "",
-  });
-
+const MakePost = ({ params }) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setPost((prevPost) => ({
@@ -18,42 +12,42 @@ const MakePost = ({params}) => {
   };
 
   const router = useRouter();
-  const {data:session} = useSession();
+  const obj = params.params;
 
-  const user = params.name;
-  const author = decodeURIComponent(user);
-  const userImage = session.user.image;
+  const title = decodeURIComponent(obj[0]);
+  const description = decodeURIComponent(obj[1]);
+  const userId = decodeURIComponent(obj[2]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const formData = {
-      title: post.title,
-      description: post.description,
-      author: author,
-      userImage: userImage,
-    };
-
     try {
-      const response = await fetch(`/api/make-post/${author}`, {
-        method: "POST",
+      const response = await fetch(`/api/edit-post/${userId}`, {
+        method: "PATCH",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          title: post.title,
+          description: post.description,
+        }),
       });
 
       if (response.ok) {
-        console.log("Posted successfully");
+        console.log("Post updated successfully");
         router.push("/");
       } else {
-        console.error("Failed to post");
+        console.error("Failed to update post");
       }
     } catch (error) {
-      console.error("Error posting:", error);
+      console.error("Error updating post:", error);
     }
-    router.push("/");
   };
+
+  const [post, setPost] = useState({
+    title: title || "",
+    description: description || "",
+  });
 
   return (
     <div className="w-3/5 mt-5 mx-auto h-full">
@@ -94,7 +88,7 @@ const MakePost = ({params}) => {
           <textarea
             id="description"
             name="description"
-            className="shadow appearance-none border rounded w-full h-64 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline font-Poppins"
+            className="shadow appearance-none border rounded w-full h-80 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline font-Poppins"
             placeholder="Describe your traumatic incidents/mental health problems/other issues"
             value={post.description}
             onChange={handleChange}

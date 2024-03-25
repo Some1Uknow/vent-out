@@ -2,10 +2,10 @@
 import Image from "next/image";
 import { IoCalendarNumberSharp } from "react-icons/io5";
 import { FaEarthAfrica } from "react-icons/fa6";
-import { IoIosMale, IoIosFemale } from "react-icons/io";
 import { useSession } from "next-auth/react";
 import CreatePost from "./CreatePost";
 import Profilebtn from "./Profilebtn";
+import { MdOutlinePeople } from "react-icons/md";
 import { useEffect, useState } from "react";
 
 const ProfileCard = ({ params }) => {
@@ -34,10 +34,11 @@ const ProfileCard = ({ params }) => {
     fetchData();
   }, []);
 
+
   return (
     <div className="flex flex-col items-center">
       <section className=" shadow-md rounded-lg m-4 mr-1 p-3 h-max w-80 max-w-full bg-white">
-        <div className="flex flex-row p-1">
+        <div className="flex flex-row p-2">
           <Image
             className="mr-3 rounded-full inline-block"
             height={40}
@@ -50,11 +51,11 @@ const ProfileCard = ({ params }) => {
             <p className="text-xs text-gray-500">{session?.user.email}</p>
           </div>
         </div>
-        <div className="p-1 mb-2">
-          <p className="text-sm text-gray-600 p-1">{profileData.bio}</p>
+        <div className="p-1">
+          <p className="text-sm text-gray-600 p-1 mb-2">{profileData.bio}</p>
           <div className="flex flex-row justify-between">
             <p className=" text-gray-600 ">
-              <IoIosMale className="m-1 inline" />
+              <MdOutlinePeople  className="m-1 inline" />
               {profileData.gender}
             </p>
             <p className=" text-gray-600 flex items-center">

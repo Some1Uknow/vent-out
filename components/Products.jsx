@@ -46,7 +46,7 @@ const ProductCard = ({ name, price, imgSrc }) => {
         src={imgSrc}
         width={180}
         height={180}
-        className="mb-2 rounded-md shadow-md h-40 object-contain w-38"
+        className="mb-2 rounded-md shadow-xl object-contain"
       />
       <p>{name} </p>
       <p className="flex flex-row">

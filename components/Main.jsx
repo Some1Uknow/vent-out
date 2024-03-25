@@ -11,7 +11,7 @@ const Main = () => {
   const [component, setComponent] = useState(<PostPage />);
 
   return (
-    <div className="flex flex-row h-max font-Poppins justify-center bg-gray-50">
+    <div className="flex flex-row h-max font-Poppins justify-center bg-gray-100">
       <ProfileCard />
       <div className="flex flex-col w-3/5">
         <Navbar setComponent={setComponent} />

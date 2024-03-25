@@ -1,8 +1,10 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 
-const EditProfile = ({params}) => {
+const EditProfile = ({ params }) => {
+  const {data: session} = useSession();
 
   const userId = params.id;
 
@@ -45,7 +47,19 @@ const EditProfile = ({params}) => {
 
   const goBack = () => {
     router.push("/");
-  }
+  };
+
+  useEffect(() => {
+    const fetchProfileData = async () => {
+      const response = await fetch(`/api/make-profile/${session.user.id}`);
+      const data = await response.json();
+      setBio(data.profile.bio || "");
+      setAge(data.profile.age || "");
+      setCountry(data.profile.country || "");
+      setGender(data.profile.gender || "");
+    };
+    fetchProfileData();
+  }, []);
 
   return (
     <div className="w-3/4 mt-5 mx-auto h-3/4">
@@ -127,9 +141,9 @@ const EditProfile = ({params}) => {
           >
             Save Changes
           </button>
-          <button 
-          type="button"
-          onClick={goBack}
+          <button
+            type="button"
+            onClick={goBack}
             className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           >
             Go back
