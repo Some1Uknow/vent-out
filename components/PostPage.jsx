@@ -4,7 +4,7 @@ import UserPosts from "./UserPosts";
 import { useState } from "react";
 
 const NavBar = ({ setType }) => {
-  const [selected, setSelected] = useState("all"); // Add this state
+  const [selected, setSelected] = useState("all"); 
 
   return (
     <>

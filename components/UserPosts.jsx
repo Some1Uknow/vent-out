@@ -5,7 +5,7 @@ import { FaComment } from "react-icons/fa6";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { MdDelete } from "react-icons/md";
-import { FaEdit, FaPenSquare } from "react-icons/fa";
+import { FaEdit } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import CreatePost from "./CreatePost";
 
