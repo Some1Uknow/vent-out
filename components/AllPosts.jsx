@@ -1,13 +1,16 @@
 "use client";
 import Image from "next/image";
-import { FcLike } from "react-icons/fc";
+import { FcLike, FcLikePlaceholder } from "react-icons/fc";
 import { FaComment } from "react-icons/fa6";
-import { useSession } from "next-auth/react";
 import { Suspense, useEffect, useState } from "react";
 
 const AllPosts = () => {
-  const { data: session } = useSession();
   const [posts, setPosts] = useState([]);
+  const [likes, setLikes] = useState(false);
+
+  const like = (postId) => {
+    setLikes(!likes);
+  };
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -78,8 +81,12 @@ const AllPosts = () => {
               </h2>
               <p className="mt-1 text-gray-600 text-sm">{post.description}</p>
               <div className="mt-4 flex items-center space-x-4">
-                <button>
-                  <FcLike className="h-5 w-5" />
+                <button onClick={() => like(post._id)}>
+                  {likes == true ? (
+                    <FcLike className="h-5 w-5" />
+                  ) : (
+                    <FcLikePlaceholder className="h-5 w-5" />
+                  )}
                 </button>
                 <button>
                   <FaComment className="h-5 w-5" />
