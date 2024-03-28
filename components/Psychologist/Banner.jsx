@@ -1,6 +1,6 @@
 const Banner = () => {
     return (
-      <div className="h-full p-24 pl-0 border-r-2">
+      <div className="h-full pr-40 pt-24 border-r-2">
         <p className="font-Madimi mt-10 text-left text-pink-800">
           <span className="text-8xl">Psychologists</span>
           <br />
