@@ -15,13 +15,31 @@ const LoginForm = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const psychologistData = {
       email: formData.email,
       password: formData.password,
     };
-    console.log(psychologistData);
+    try {
+      const response = await fetch('/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(psychologistData),
+      });
+
+      if (response.ok) {
+        // Redirect or perform actions after successful login
+        console.log('Login successful');
+      } else {
+        // Display an error message indicating wrong password
+        console.error('Login failed');
+      }
+    } catch (error) {
+      console.error('An error occurred:', error);
+    }
   };
 
   return (
