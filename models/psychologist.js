@@ -12,7 +12,7 @@ const psychologistSchema = new Schema(
       required: true,
     },
     lastName: {
-      type: Number,
+      type: String,
       required: true,
     },
     email: {
@@ -32,11 +32,11 @@ const psychologistSchema = new Schema(
       required: true,
     },
     years: {
-      type: String,
+      type: Number,
       required: true,
     },
     phone: {
-      type: String,
+      type: Number,
       required: true,
     },
     company: {
@@ -47,6 +47,6 @@ const psychologistSchema = new Schema(
   { timestamps: true }
 );
 
-const psychologist =
-  models.psychologist || mongoose.model("Psychologist", psychologistSchema);
-export default psychologist;
+const Psychologist =
+  mongoose.models.psychologist || mongoose.model('psychologist', psychologistSchema);
+export default Psychologist;
