@@ -22,7 +22,7 @@ const RegisterForm = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const psychologistData = {
       firstName: formData.firstName,
@@ -35,8 +35,34 @@ const RegisterForm = () => {
       phone: formData.phone,
       company: formData.company,
     };
-    
+  
+    try {
+      const res = await fetch("/api/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(psychologistData),
+      });
+      const data = await res.json();
+      console.log("Registration successful", data);
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: "",
+        expertise: "",
+        country: "",
+        years: "",
+        phone: "",
+        company: "",
+      });
+      alert("You have been registered successfully, now login to continue")
+    } catch (error) {
+      console.error("Registration failed", error);
+    }
   };
+  
 
   return (
     <>
