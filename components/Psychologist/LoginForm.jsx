@@ -1,11 +1,14 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
+
+  const router = useRouter();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -33,6 +36,9 @@ const LoginForm = () => {
       if (response.ok) {
         // Redirect or perform actions after successful login
         console.log('Login successful');
+        const data = await response.json();
+        router.push(`/psychologist/${data.psychologistId}`);
+        
       } else {
         // Display an error message indicating wrong password
         console.error('Login failed');
