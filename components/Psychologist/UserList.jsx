@@ -56,7 +56,7 @@ const UserList = () => {
                   Gender: {gender}
                 </p>
                 <p className="text-md border-2 rounded-lg p-2  text-gray-50 bg-gray-500 mb-2 w-max">
-                  Created At: {createdAt}
+                  Created At:  {new Date(createdAt).toLocaleString()}
                 </p>
               </div>
             </div>
