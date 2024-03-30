@@ -8,15 +8,14 @@ import community from "@/public/community.jpg";
 const Home = () => {
   return (
     <>
-      <div className="flex flex-col justify-between items-center gap-4 bg-gray-100">
-      <div className="relative">
-  <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]"></div>
-  <div className="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#C9EBFF,transparent)]"></div>
-  <h1 className="font-Poppins text-6xl text-center bg-pink-600 border-b-2 shadow-md p-44 bg-clip-text text-transparent relative z-10">
-    The place where you can get rid of all of your sadness :)
-  </h1>
-</div>
-
+      <div className="flex flex-col justify-between items-center gap-4 bg-gray-100 ">
+        <div className="relative w-full">
+          <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]"></div>
+          <div className="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#C9EBFF,transparent)]"></div>
+          <h1 className="font-Poppins text-7xl text-center bg-pink-600 border-b-2 shadow-md p-36 bg-clip-text text-transparent relative z-10">
+            The place where you can get rid of all of your sadness :)
+          </h1>
+        </div>
 
         <div className="self-start text-center flex flex-col justify-center gap-12 mt-10 w-full p-12">
           <Card
