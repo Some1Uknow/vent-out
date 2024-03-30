@@ -18,6 +18,10 @@ const nextConfig = {
             protocol: 'https',
             hostname: 'i.redd.it',
           },
+          {
+            protocol: 'https',
+            hostname: 'via.placeholder.com'
+          },
         ],
       },
 };
