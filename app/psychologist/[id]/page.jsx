@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import PsychologistCard from "@/components/Psychologist/PsychologistCard";
 import Nav from "@/components/Psychologist/Nav";
-
+import UserList from "@/components/Psychologist/UserList";
 
 const Page = ({ params }) => {
   const id = params.id;
@@ -22,16 +22,21 @@ const Page = ({ params }) => {
       }
     };
     fetchData();
-  }, []); 
-
+  }, []);
 
   return (
-    <div>
+    <div className="ml-28">
       {psychologist ? (
-        <div className="flex flex-row">  <PsychologistCard psychologist={psychologist} /><Nav/></div>
-      
+        <div className="flex flex-row w-full">
+          {" "}
+          <PsychologistCard psychologist={psychologist} />
+          <div className="flex flex-col w-full">
+            <Nav />
+            <UserList />
+          </div>
+        </div>
       ) : (
-        <p>Psychologist not found</p>
+        <p className="text-4xl font-bold font-Madimi p-40 mt-10">LOADING...</p>
       )}
     </div>
   );
