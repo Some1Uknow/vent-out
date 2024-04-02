@@ -18,7 +18,6 @@ const authOptions = {
     },
     async signIn({ user, account, profile }) {
       await connectDB();
-      // console.log("User", user, "Account", account, "profile", profile);
       const existingUser = await User.findOne({ email: user.email });
       if (!existingUser) {
         try {
