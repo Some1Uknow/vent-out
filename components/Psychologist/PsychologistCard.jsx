@@ -2,6 +2,7 @@ import { MdOutlinePeople } from "react-icons/md";
 import { IoCalendarNumberSharp } from "react-icons/io5";
 import { FaEarthAfrica } from "react-icons/fa6";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const PsychologistCard = ({ psychologist }) => {
   const {
@@ -14,6 +15,12 @@ const PsychologistCard = ({ psychologist }) => {
     phone,
     createdAt,
   } = psychologist;
+
+  const router = useRouter();
+
+  const handleSignOut = () => {
+    router.push('/');
+  }
 
 const handleEdit = () => {
   alert("Due to shortage of manpower, this feature will take sometime to be developed...")
@@ -59,8 +66,9 @@ const handleEdit = () => {
             Joined VentOut At: {new Date(createdAt).toLocaleString()}
           </p>
         </div>
-        <div className="flex flex-row hover:bg-gray-300  h-full shadow-md justify-around p-4 mt-3 border-t-2 rounded-lg w-full bg-white text-3xl font-semibold">
-        <button onClick={()=>handleEdit()}>Edit Profile</button>
+        <div className="flex flex-col   h-full shadow-md justify-around py-2 mt-3 border-t-2 rounded-lg w-full bg-white text-3xl font-semibold">
+        <button className="p-2 border-b-2 hover:bg-gray-300" onClick={()=>handleEdit()}>Edit Profile</button>
+        <button className="p-2 hover:bg-gray-300" onClick={()=>handleSignOut()}>Sign Out</button>
       </div>
       </div>
     </section>
