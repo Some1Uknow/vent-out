@@ -1,11 +1,10 @@
 import Image from "next/image";
-import React from "react";
 import { IoCart } from "react-icons/io5";
 
 const Products = () => {
   return (
     <div className="flex flex-col shadow-md rounded-lg p-3 m-4 mb-8 justify-around gap-2 bg-white">
-      <span className="text-5xl font-bold">Introducing VentOut Goodies!</span>
+      <span className="text-5xl font-bold">Introducing VentOut Merch!</span>
       <span className="text-xl">
         Discover a collection of VentOut-branded clothing and stress-relieving
         toys and gadgets, designed to help you unwind and elevate your mental
