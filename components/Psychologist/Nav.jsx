@@ -1,6 +1,6 @@
 const Nav = () => {
   return (
-    <div className="flex flex-row shadow-md rounded-lg p-3 m-4 justify-around mb-1 bg-white h-max w-2/3">
+    <div className="flex flex-row shadow-md rounded-lg p-3 m-4 justify-around mb-1 bg-white h-max w-full">
       <div className="relative flex w-full">
         <input
           type="search"

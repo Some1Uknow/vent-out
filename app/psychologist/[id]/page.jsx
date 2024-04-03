@@ -25,7 +25,7 @@ const Page = ({ params }) => {
   }, []);
 
   return (
-    <div className="ml-28">
+    <div className="m-28 mt-0 mb-0">
       {psychologist ? (
         <div className="flex flex-row w-full">
           {" "}
