@@ -8,7 +8,7 @@ const News = () => {
     const getNews = async () => {
       try {
         const res = await fetch(
-          `https://newsapi.org/v2/everything?q=depression&sortBy=relevancy&totalResults=25&page=5&pageSize=5&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`
+          `https://newsapi.org/v2/everything?q=depression&sortBy=relevancy&totalResults=20&page=2&pageSize=7&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`
         );
         const data = await res.json();
         setArticles(data.articles);

@@ -1,39 +1,58 @@
-import React from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 const Communities = () => {
+  const router = useRouter();
+
+  const communityData = [
+    {
+      name: "Anxiety Fighters",
+      memberNumber: "10",
+      info: "Join us if you are facing Anxiety Problems",
+      imgSrc: "https://hips.hearstapps.com/hmg-prod/images/what-are-the-physical-symptoms-of-anxiety-64cb84440a2db.jpg?crop=0.700xw:1.00xh;0.151xw,0&resize=1200:*",
+    },
+    {
+      name: "Not Alone",
+      memberNumber: "10",
+      imgSrc: "https://static.vecteezy.com/system/resources/thumbnails/022/188/689/small/alone-sad-boy-alone-concept-generative-ai-photo.jpg",
+      info: "Dealing with loneliness?... Well not anymore! We are here to make you feel better",
+    },
+    {
+      name: "Uplift!",
+      memberNumber: "10",
+      imgSrc: "https://i.redd.it/alt1xwitwar71.png",
+      info: "Want to boost your self confidence and learn how to love yourself! Join one of the most positive communities on VentOut!",
+    },
+  ];
+
+  const handleClick = (name) => {
+    router.push(`/groups/${name}`);
+  };
+
   return (
     <div className="flex flex-col gap-2 shadow-md rounded-lg p-3 m-4 justify-around mb-1 bg-white">
       <span className="text-5xl font-bold">Join Communities today!</span>
       <span className="text-xl">
         Connect with people who had similar experiences and make new friends!
       </span>
-      <Community
-        name="Anxiety Fighters"
-        memberNumber="10"
-        info="Join us if you are facing Anxiety Problems"
-        imgSrc="https://hips.hearstapps.com/hmg-prod/images/what-are-the-physical-symptoms-of-anxiety-64cb84440a2db.jpg?crop=0.700xw:1.00xh;0.151xw,0&resize=1200:*"
-      />
-      <Community
-        name="Not Alone"
-        memberNumber="10"
-        imgSrc="https://static.vecteezy.com/system/resources/thumbnails/022/188/689/small/alone-sad-boy-alone-concept-generative-ai-photo.jpg"
-        info="Dealing with loneliness?... Well not anymore! We are here to make you feel better"
-      />
-      <Community
-        name="Uplift!"
-        memberNumber="10"
-        imgSrc="https://i.redd.it/alt1xwitwar71.png"
-        info="Want to boost your self confidence and learn how to love yourself! Join one of the most positive communities on VentOut!"
-      />
+      {communityData.map((community, index) => (
+        <Community
+          key={index}
+          name={community.name}
+          memberNumber={community.memberNumber}
+          info={community.info}
+          imgSrc={community.imgSrc}
+          onClick={() => handleClick(community.name)}
+        />
+      ))}
     </div>
   );
 };
 
-const Community = ({ name, memberNumber, info, imgSrc }) => {
+const Community = ({ name, memberNumber, info, imgSrc, onClick }) => {
   return (
     <div>
-      <section className=" shadow-md rounded-lg p-2 h-max w-9/10 m-1 mt-4 bg-white border-t-2">
+      <section className=" shadow-md rounded-lg p-2 h-max w-9/10 m-1 mt-4 bg-white border-t-2" onClick={onClick}>
         <div className="flex flex-row p-1">
           <Image
             className="rounded-full mr-2 object-cover"

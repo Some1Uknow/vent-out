@@ -9,7 +9,7 @@ import { MdGroups2 } from "react-icons/md";
 
 const Navbar = ({ setComponent }) => {
   return (
-    <div className="flex flex-col justify-start items-start shadow-md rounded-lg py-2 mb-4 bg-white">
+    <div className="flex flex-col justify-start items-start shadow-lg rounded-lg py-2 mb-4 bg-white">
       <div className="w-full p-2">
         <button
           onClick={() => setComponent(<PostPage />)}
