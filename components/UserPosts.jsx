@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { MdDelete } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
 import { useRouter } from "next/navigation";
-import CreatePost from "./CreatePost";
+import Createpost from "./Createpost";
 
 const UserPosts = () => {
   const { data: session } = useSession();
@@ -21,7 +21,7 @@ const UserPosts = () => {
       setPosts(data.post);
     };
     fetchPosts();
-  }, []);
+  }, [session]);
 
   const handleDelete = async (postId) => {
     try {
@@ -41,18 +41,19 @@ const UserPosts = () => {
   };
 
   const handleEdit = (title, description, postId) => {
-  
     router.push(`/edit-post/${title}/${description}/${postId}`);
   };
-  
-  
+
   return (
     <div className="w-9/10 m-2 mt-0 p-2 flex flex-col">
       {posts.length == 0 ? (
-        <CreatePost />
+        <Createpost />
       ) : (
         posts.map((post) => (
-          <div key={post._id} className="bg-white shadow-md rounded-lg p-6 mb-4">
+          <div
+            key={post._id}
+            className="bg-white shadow-md rounded-lg p-6 mb-4"
+          >
             <div className="flex flex-row items-center justify-between">
               <div className="flex flex-row items-center">
                 <Image
@@ -70,14 +71,22 @@ const UserPosts = () => {
                 </div>
               </div>
               <div className="flex flex-row items-center cursor-pointer">
-                <MdDelete
-                  className="w-10 h-10 text-red-600"
-                  onClick={() => handleDelete(post._id)}
-                />
-                <FaEdit
-                  className="w-9 h-9 text-blue-700 cursor-pointer"
-                  onClick={() => handleEdit(post.title, post.description, post._id)}
-                />
+                <div className="flex flex-row items-center px-4 py-2 bg-pink-200 mr-3 rounded-full">
+                  <span>Delete</span>
+                  <MdDelete
+                    className="w-10 h-10 text-red-600"
+                    onClick={() => handleDelete(post._id)}
+                  />
+                </div>
+                <div className="flex flex-row items-center px-4 py-2 bg-pink-200 mr-3 rounded-full">
+                  <span>Edit</span>
+                  <FaEdit
+                    className="w-9 h-9 text-blue-700 cursor-pointer ml-2"
+                    onClick={() =>
+                      handleEdit(post.title, post.description, post._id)
+                    }
+                  />
+                </div>
               </div>
             </div>
             <h2 className="mt-4 text-xl font-bold text-gray-800">
