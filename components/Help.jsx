@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import { IoChatboxEllipsesSharp } from "react-icons/io5";
 
 const Help = () => {
   const [data, setData] = useState([]);
@@ -43,36 +44,55 @@ const Doctors = ({
   const handleEmailClick = (email) => {
     window.location.href = `mailto:${email}`;
   };
+
+  const handeChatClick = () => {
+    alert("under Development...");
+  };
+
   return (
     <div>
       <section className=" shadow-md rounded-lg p-2 h-max w-9/10 m-1 mt-4 bg-white border-t-2">
         <div className="flex flex-row p-1">
           <Image
             className="rounded-full border-2 mr-4 shadow-sm"
-            src="https://static.vecteezy.com/system/resources/previews/002/002/427/non_2x/man-avatar-character-isolated-icon-free-vector.jpg"
+            src="https://static.vecteezy.com/system/resources/previews/002/204/187/non_2x/doctor-injecting-vaccine-to-a-patient-free-vector.jpg"
             width={225}
             height={100}
             alt="user-image"
           />
-          <div className="flex flex-col">
-            <p className="text-4xl mb-1 font-bold">
-              {firstName} {lastName}
-            </p>
-            <p className="text-xl text-gray-500 font-semibold mb-2">
-              {years} years of experience
-            </p>
-            <p
-              className="text-md border-2 rounded-lg p-2 font-semibold text-gray-50 bg-gray-700 mb-2 cursor-pointer"
-              onClick={() => handleEmailClick(email)}
-            >
-              Email: {email}
-            </p>
-            <p className="text-md border-2 rounded-lg p-2 font-semibold text-gray-50 bg-gray-700 mb-2">
-              Country: {country}
-            </p>
-            <p className="text-md border-2 rounded-lg p-2 font-semibold text-gray-50 bg-gray-700 mb-2">
-              Company: {company}
-            </p>
+          <div className="flex flex-col w-full">
+            <div className="flex flex-row">
+              <div className="flex flex-col flex-grow">
+                <p className="text-4xl mb-1 font-bold">
+                  {firstName} {lastName}
+                </p>
+                <p className="text-xl text-gray-500 font-semibold mb-2">
+                  {years} years of experience
+                </p>
+              </div>
+
+              <p
+                onClick={() => handeChatClick()}
+                className="mb-2 text-xl p-2 px-4 text-white cursor-pointer flex flex-row items-center bg-gray-500 w-max rounded-full"
+              >
+                <IoChatboxEllipsesSharp className="mr-2" /> Chat (coming
+                soon...)
+              </p>
+            </div>
+            <div className="flex flex-col">
+              <p
+                className="text-md border-2 rounded-lg p-2 font-semibold text-gray-50 bg-gray-500 mb-2 cursor-pointer w-max"
+                onClick={() => handleEmailClick(email)}
+              >
+                Email: {email}
+              </p>
+              <p className="text-md border-2 rounded-lg p-2 font-semibold text-gray-50 bg-gray-500 mb-2 w-max">
+                Country: {country}
+              </p>
+              <p className="text-md border-2 rounded-lg p-2 font-semibold text-gray-50 bg-gray-500 mb-2 w-max">
+                Company: {company}
+              </p>
+            </div>
           </div>
         </div>
         <div className="p-1 mb-2 flex flex-row justify-between">
