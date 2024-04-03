@@ -1,6 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
+import { IoMdCreate } from "react-icons/io";
 
 const editProfile = () => {
   const { data: session } = useSession();
@@ -14,9 +15,12 @@ const editProfile = () => {
     <>
       <button
         onClick={() => editprofile()}
-        className="transition hover:duration-300 hover:bg-gray-300 text-black bg-transparent font-bold py-2 rounded"
+        className="transition hover:duration-300 p-2 hover:bg-gray-300 mb-1 text-black bg-transparent font-extrabold rounded"
       >
-        <span className="font-Madimi text-xl m-2 p-4">Edit Profile</span>
+        <span className="font-Poppins text-2xl flex flex-row justify-center items-center">
+          <IoMdCreate className="mr-1"/>
+          Edit Profile
+        </span>
       </button>
     </>
   );
