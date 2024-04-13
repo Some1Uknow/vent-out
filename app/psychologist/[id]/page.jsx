@@ -31,6 +31,10 @@ const Page = ({ params }) => {
           {" "}
           <PsychologistCard psychologist={psychologist} />
           <div className="flex flex-col w-full">
+            <div className="p-4 text-5xl bg-gray-100 rounded-xl mt-4 ml-4 mb-4 font-semibold font-Poppins">
+              Our users need your expertise! Connect with them instantly using Chat,
+              or contact them using their email.
+            </div>
             <Nav />
             <UserList />
           </div>
