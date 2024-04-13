@@ -1,5 +1,5 @@
 <div style="text-align: center;">
-    <img src="/public/VentOut-logo.svg" alt="VentOut Logo" />
+    <img style="text-align: center;" src="/public/VentOut-logo.svg" alt="VentOut Logo" />
 </div>
 
 
