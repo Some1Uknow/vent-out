@@ -1,7 +1,6 @@
-<div style="text-align: center;">
-    <img style="text-align: center;" src="/public/VentOut-logo.svg" alt="VentOut Logo" />
-</div>
-
+<p align="center">
+  <img src="/public/VentOut-logo.svg" alt="VentOut Logo" />
+</p>
 
 # VentOut
 
