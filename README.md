@@ -1,6 +1,5 @@
 ![VentOut Logo](/public/VentOut-logo.svg "VentOut Logo")
 
-
 # VentOut
 
 VentOut is a platform that provides a safe space for individuals to express their emotions and receive support from others. It aims to create a positive and empathetic community where users can share their thoughts and feelings without fear of judgment.
