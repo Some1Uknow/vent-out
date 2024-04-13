@@ -3,7 +3,7 @@
  "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
  width="642.000000pt" height="171.000000pt" viewBox="0 0 642.000000 171.000000"
- preserveAspectRatio="xMidYMid meet">
+ preserveAspectRatio="xMidYMid meet" fill="#ffffff">
 
 <g transform="translate(0.000000,171.000000) scale(0.100000,-0.100000)"
 fill="#000000" stroke="none">
@@ -51,4 +51,5 @@ c0 75 -2 81 -28 104 -40 35 -109 34 -142 -2z"/>
 -233 67 -250 29 -9 47 -8 78 2 60 20 67 52 63 268 -3 164 -5 178 -29 231 -46
 97 -125 139 -263 139 -64 0 -91 -5 -131 -24z"/>
 </g>
+
 </svg>
