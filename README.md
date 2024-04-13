@@ -1,3 +1,4 @@
+![VentOut Logo](/public/VentOut-logo.svg "VentOut Logo")
 
 
 # VentOut
@@ -43,19 +44,19 @@ VentOut is a platform that provides a safe space for individuals to express thei
 
 ### Installation
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/ventout.git
-   ```
+```bash
+git clone https://github.com/your-username/ventout.git
+```
 
 2. Navigate to project directory 
  ```bash
-   cd ventout
-   ```
+cd ventout
+```
    
 3. Install dependencies:
-   ```bash
+```bash
    npm install
-   ```
+```
 4. Configuration
 Create a .env file in the root directory with the following environment variables:
 
@@ -69,9 +70,9 @@ NEXT_PUBLIC_API_KEY=
 ```
 
 5. Run the development server:
-   ```bash
-   npm run dev
-   ```
+```bash
+npm run dev
+```
 
 
 
