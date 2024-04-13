@@ -1,4 +1,7 @@
-![VentOut Logo](/public/VentOut-logo.svg "VentOut Logo")
+<div style="text-align: center;">
+    <img src="/public/VentOut-logo.svg" alt="VentOut Logo" />
+</div>
+
 
 # VentOut
 
