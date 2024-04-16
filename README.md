@@ -26,16 +26,6 @@ VentOut is a platform that provides a safe space for individuals to express thei
 
 ## Tech Stack
 
-### Frontend
-- **Framework:** React.js
-- **State Management:** Redux
-- **Styling:** CSS Modules, Tailwind CSS
-
-### Backend
-- **Framework:** Node.js
-- **Web Framework:** Express.js
-- **Database:** MongoDB
-- **Authentication:** JWT (JSON Web Tokens)
 
 ## Getting Started
 
