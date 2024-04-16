@@ -7,6 +7,7 @@
 VentOut is a platform that provides a safe space for individuals to express their emotions and receive support from others. It aims to create a positive and empathetic community where users can share their thoughts and feelings without fear of judgment.
 
 ## Features
+<img src="https://skillicons.dev/icons?i=javascript,nextjs,mongodb,html,css,tailwind,git,github,powershell,bash,postman,vscode,vite" />
 
 ### Positive Comment Reinforcement
 - Users can only post positive comments, fostering a supportive environment.
