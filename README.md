@@ -25,7 +25,7 @@ VentOut is a platform that provides a safe space for individuals to express thei
 - Compliant with relevant data protection regulations (e.g., GDPR, HIPAA).
 
 ## Tech Stack
-<img src="https://skillicons.dev/icons?i=javascript,nextjs,mongodb,html,css,tailwind,git,github,powershell,bash,postman,vscode,vite" />
+<img src="https://skillicons.dev/icons?i=javascript,nextjs,mongodb,html,css,tailwind,git,github,powershell,bash,postman,vscode,vercel" />
 
 ## Getting Started
 
