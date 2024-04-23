@@ -15,9 +15,9 @@ const CreatePost = () => {
     <>
       <button
         onClick={() => create()}
-        className="transition border-r-2 p-3 hover:duration-300 hover:bg-gray-300 text-black bg-transparent mb-1 font-bold rounded"
+        className="transition w-1/2 border-2 p-1 hover:duration-300 hover:bg-gray-300 text-black bg-transparent font-bold rounded-lg"
       >
-        <span className="font-Poppins text-2xl flex flex-row justify-center items-center">
+        <span className="font-Poppins flex flex-row justify-center items-center">
           <AiFillPlusCircle className="mr-2" />
           Create Post
         </span>

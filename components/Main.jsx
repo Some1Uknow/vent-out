@@ -11,7 +11,7 @@ const Main = () => {
 
   return (
     <div className="flex flex-row h-max font-Poppins justify-center bg-gray-100">
-      <div className="flex flex-col">
+      <div className="flex flex-col justify-between items-center">
         <ProfileCard />
         <Navbar setComponent={setComponent} />
       </div>

@@ -15,9 +15,9 @@ const editProfile = () => {
     <>
       <button
         onClick={() => editprofile()}
-        className="transition hover:duration-300 p-2 hover:bg-gray-300 mb-1 text-black bg-transparent font-extrabold rounded"
+        className="transition hover:duration-300 p-1 w-1/2 border-2 hover:bg-gray-300 text-black bg-transparent font-extrabold rounded-lg"
       >
-        <span className="font-Poppins text-2xl flex flex-row justify-center items-center">
+        <span className="font-Poppins flex flex-row justify-center items-center">
           <IoMdCreate className="mr-1"/>
           Edit Profile
         </span>

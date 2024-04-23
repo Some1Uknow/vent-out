@@ -9,7 +9,7 @@ import { MdGroups2 } from "react-icons/md";
 
 const Navbar = ({ setComponent }) => {
   return (
-    <div className="flex flex-col justify-start items-start shadow-lg rounded-lg py-2 mb-4 bg-white">
+    <div className="flex flex-col justify-start items-start shadow-lg rounded-lg py-2 mb-4 w-11/12 bg-white">
       <div className="w-full p-2">
         <button
           onClick={() => setComponent(<PostPage />)}
@@ -40,7 +40,7 @@ const Navbar = ({ setComponent }) => {
           className="transition hover:duration-300 hover:bg-gray-300 text-black bg-transparent w-full p-2 font-bold py-2 rounded"
         >
           {" "}
-          <span className="font-Poppins text-2xl ml-3 flex flex-row justify-start items-center">
+          <span className="font-Poppins text-lg ml-3 flex flex-row justify-start items-center">
             <FaHandHoldingHeart className="mr-2" />
             Get Professional Help
           </span>
