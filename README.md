@@ -25,17 +25,7 @@ VentOut is a platform that provides a safe space for individuals to express thei
 - Compliant with relevant data protection regulations (e.g., GDPR, HIPAA).
 
 ## Tech Stack
-
-### Frontend
-- **Framework:** React.js
-- **State Management:** Redux
-- **Styling:** CSS Modules, Tailwind CSS
-
-### Backend
-- **Framework:** Node.js
-- **Web Framework:** Express.js
-- **Database:** MongoDB
-- **Authentication:** JWT (JSON Web Tokens)
+<img src="https://skillicons.dev/icons?i=javascript,nextjs,mongodb,html,css,tailwind,git,github,powershell,bash,postman,vscode,vercel" />
 
 ## Getting Started
 
