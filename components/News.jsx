@@ -2,22 +2,35 @@
 import { useEffect, useState } from 'react';
 
 const News = () => {
-  const [articles, setArticles] = useState([]);
+  const [articles, setArticles] = useState([
+    {
+      title: 'Sample Article 1',
+      description: 'This is a sample article description 1.',
+      url: 'https://example.com/article1',
+    },
+    {
+      title: 'Sample Article 2',
+      description: 'This is a sample article description 2.',
+      url: 'https://example.com/article2',
+    },
+  ]);
 
-  useEffect(() => {
-    const getNews = async () => {
-      try {
-        const res = await fetch(
-          `https://newsapi.org/v2/everything?q=depression&sortBy=relevancy&totalResults=20&page=2&pageSize=7&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`
-        );
-        const data = await res.json();
-        setArticles(data.articles);
-      } catch (error) {
-        console.error('Error fetching news:', error);
-      }
-    };
-    getNews();
-  }, []);
+  // Comment out the API call and useEffect hook cuz the API isnt working in production app
+  // const getNews = async () => {
+  //   try {
+  //     const res = await fetch(
+  //       `https://newsapi.org/v2/everything?q=depression&sortBy=relevancy&totalResults=20&page=2&pageSize=7&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`
+  //     );
+  //     const data = await res.json();
+  //     setArticles(data.articles);
+  //   } catch (error) {
+  //     console.error('Error fetching news:', error);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   getNews();
+  // }, []);
 
   return (
     <section className="shadow-md rounded-lg m-4 ml-1 p-3 w-72 max-w-full h-max bg-white">
