@@ -6,9 +6,15 @@ import { useRouter } from "next/navigation";
 const Headbar = () => {
   const { data: session, status } = useSession();
   const router = useRouter();
-  const handleSignOut = async () => {
-    // await signOut("google");
-    signOut({ callbackUrl: "http://localhost:3000" });
+
+  const handleSignOut = () => {
+    router.push("/");
+    signOut("google");
+  };
+
+  const handleSignIn = async () => {
+    router.push("/signedIn");
+    signIn("google");
   };
 
   return (
@@ -32,7 +38,7 @@ const Headbar = () => {
       ) : (
         <div>
           <button
-            onClick={() => signIn("google")}
+            onClick={handleSignIn}
             className="transition hover:duration-300 hover:bg-pink-200 text-pink-600 bg-transparent font-bold py-2 px-4 rounded"
           >
             <span className="font-Madimi text-2xl m-2 p-4">Sign In</span>
