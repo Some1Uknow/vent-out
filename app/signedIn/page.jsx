@@ -30,9 +30,9 @@ const Main = () => {
         </>
       ) : (
         <>
-          <h1 className="w-screen text-center text-4xl font-Madimi h-5/6">
-            Logging Out...
-          </h1>{" "}
+          <div className="w-screen h-5/6 flex flex-row justify-center items-center">
+            <div className="border-gray-300 h-20 w-20 animate-spin rounded-full border-8 border-t-blue-600" />
+          </div>
           {router.push("/")}
         </>
       )}

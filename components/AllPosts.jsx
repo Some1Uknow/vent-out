@@ -29,7 +29,7 @@ const AllPosts = () => {
   const router = useRouter();
 
   const handleClick = (postId) => {
-    router.push(`/Comments/${postId}`);
+    router.push(`/comments/${postId}`);
   };
 
   return (
