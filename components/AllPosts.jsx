@@ -1,7 +1,5 @@
 "use client";
 import Image from "next/image";
-import { FcLike, FcLikePlaceholder } from "react-icons/fc";
-import { FaComment } from "react-icons/fa6";
 import { useRouter } from "next/navigation";
 import LoadingSpinner from "./LoadingSpinner";
 import { Suspense, useEffect, useState } from "react";
