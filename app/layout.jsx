@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <meta
         name="google-site-verification"
-        content="ecFmrtBmEYc7GwBQqDdDSV6udtuyh_O0kuEeDj6KEf8"
+        content="1PPU6Cx074TD5NKK7Rf4ELeYeGl2KYo9ixYwi4q2Qfc"
       />
       <body>
         <div>
