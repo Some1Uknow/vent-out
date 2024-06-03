@@ -29,7 +29,7 @@ const Headbar = () => {
       {status === "authenticated" ? (
         <div>
           <button
-            onClick={handleSignOut}
+            onClick={() => handleSignOut}
             className="transition hover:duration-300 hover:bg-pink-200 text-pink-600 bg-transparent font-bold py-2 px-4 rounded"
           >
             <span className="font-Madimi text-2xl m-2 p-4">Sign Out</span>
@@ -38,7 +38,7 @@ const Headbar = () => {
       ) : (
         <div>
           <button
-            onClick={handleSignIn}
+            onClick={() => handleSignIn}
             className="transition hover:duration-300 hover:bg-pink-200 text-pink-600 bg-transparent font-bold py-2 px-4 rounded"
           >
             <span className="font-Madimi text-2xl m-2 p-4">Sign In</span>
