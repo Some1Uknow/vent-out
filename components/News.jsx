@@ -33,7 +33,7 @@ const News = () => {
   // }, []);
 
   return (
-    <section className="shadow-md rounded-lg m-4 ml-1 p-3 w-72 max-w-full h-max bg-white">
+    <section className="shadow-md rounded-lg p-3 mt-4 ml-2 bg-white">
       <h1 className="text-xl font-bold p-1">Health News</h1>
       <ul>
         {articles.map((article, index) => (

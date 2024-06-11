@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import LoadingSpinner from "./LoadingSpinner";
 import { Suspense, useEffect, useState } from "react";
+import { BiSolidHeart } from "react-icons/bi";
 
 const AllPosts = () => {
   const [posts, setPosts] = useState([]);
@@ -35,11 +36,13 @@ const AllPosts = () => {
         {posts.length > 0 &&
           posts.map((post) => (
             <div
-              onClick={() => handleClick(post._id)}
               key={post._id}
               className="bg-white shadow-md rounded-lg p-6 mb-4 hover:bg-gray-200"
             >
-              <div className="flex items-center space-x-4">
+              <div
+                onClick={() => router.push("/user")}
+                className="flex items-center space-x-4 w-max hover:bg-gray-300 p-1 rounded-md hover:cursor-pointer"
+              >
                 <Image
                   alt="user-image"
                   className="w-10 h-10 rounded-full inline-block"
@@ -58,7 +61,12 @@ const AllPosts = () => {
                 {post.title}
               </h2>
               <p className="mt-1 text-gray-600 text-sm">{post.description}</p>
-              <div className="mt-4 flex items-center space-x-4"></div>
+              <div
+                className="mt-4 flex items-center font-bold gap-1 bg-pink-500 text-white p-2 px-4 w-max rounded-full hover:cursor-pointer text-sm"
+                onClick={() => handleClick(post._id)}
+              >
+                Support {post.author} <BiSolidHeart />
+              </div>
             </div>
           ))}
       </Suspense>
