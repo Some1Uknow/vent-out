@@ -11,7 +11,7 @@ const AllPosts = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const res = await fetch(`api/allposts`);
+        const res = await fetch("api/allposts");
         if (!res.ok) {
           throw new Error("Failed to fetch posts");
         }

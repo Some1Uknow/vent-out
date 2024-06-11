@@ -8,7 +8,7 @@ import Profilebtn from "./Profilebtn";
 import { MdOutlinePeople } from "react-icons/md";
 import { useEffect, useState } from "react";
 
-const ProfileCard = ({ params }) => {
+const ProfileCard = () => {
   const { data: session } = useSession();
 
   const [profileData, setProfileData] = useState({
@@ -55,7 +55,9 @@ const ProfileCard = ({ params }) => {
         </div>
         <div className="p-1 flex flex-col justify-around">
           <div className="flex flex-col items-center p-1">
-            <p className="text-lg text-gray-600 p-1 mb-2 text-center font-semibold">{profileData.bio}</p>
+            <p className="text-lg text-gray-600 p-1 mb-2 text-center font-semibold">
+              {profileData.bio}
+            </p>
           </div>
           <div className="flex flex-row items-center text-md mb-2 justify-around">
             <p className="text-gray-600 flex items-center bg-pink-200 p-2 rounded-full">
@@ -64,7 +66,7 @@ const ProfileCard = ({ params }) => {
             </p>
             <p className="text-gray-600 flex items-center bg-pink-200 p-2 rounded-full">
               <IoCalendarNumberSharp className="mr-1 inline" />
-              Age: {profileData.age} 
+              Age: {profileData.age}
             </p>
             <p className="text-gray-600 flex items-center bg-pink-200 p-2 rounded-full">
               <FaEarthAfrica className="mr-1 inline" />
@@ -73,12 +75,11 @@ const ProfileCard = ({ params }) => {
           </div>
         </div>
         <div className="flex flex-row shadow-md justify-around mt-3 rounded-lg w-full bg-white">
-        <Createpost />
-        <Profilebtn />
-      </div>
+          <Createpost />
+          <Profilebtn />
+        </div>
       </section>
-      
     </div>
   );
-  };  
+};
 export default ProfileCard;
