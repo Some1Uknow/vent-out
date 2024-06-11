@@ -1,16 +1,14 @@
 import Card from "@/components/Card";
-import { BiHappyBeaming, BiSmile } from "react-icons/bi";
+import { BiHappyBeaming } from "react-icons/bi";
 import connecting from "@/public/connecting.webp";
 import emotions from "@/public/emotions.webp";
 import mentalHealth from "@/public/mental-health.webp";
 import community from "@/public/community.jpg";
-import { CgSmile } from "react-icons/cg";
-import { FaSmile } from "react-icons/fa";
 
 const Home = () => {
   return (
     <>
-      <div className="flex flex-col justify-between items-center gap-4 bg-gray-100 ">
+      <div className="flex flex-col justify-between items-center gap-4 bg-gray-100">
         <div className="relative w-full">
           <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]"></div>
           <div className="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#C9EBFF,transparent)]"></div>

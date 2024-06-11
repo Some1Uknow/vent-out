@@ -12,7 +12,7 @@ const page = () => {
       <div className="flex flex-row justify-around h-screen items-center">
         <Banner />
         <div className="flex flex-col w-1/3">
-          {" "}
+        
           {formType === "register" ? <RegisterForm /> : <LoginForm />}
           <button
             onClick={() =>

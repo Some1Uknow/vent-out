@@ -7,7 +7,6 @@ import { Suspense, useEffect, useState } from "react";
 const AllPosts = () => {
   const [posts, setPosts] = useState([]);
 
-
   useEffect(() => {
     const fetchPosts = async () => {
       try {
@@ -31,7 +30,7 @@ const AllPosts = () => {
   };
 
   return (
-    <div className="w-9/10 m-2 mt-0 p-2 flex flex-col">
+    <div className="w-full mt-2 flex flex-col">
       <Suspense fallback={<LoadingSpinner />}>
         {posts.length > 0 &&
           posts.map((post) => (

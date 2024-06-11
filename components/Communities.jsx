@@ -30,7 +30,7 @@ const Communities = () => {
   };
 
   return (
-    <div className="flex flex-col gap-2 shadow-md rounded-lg p-3 m-4 justify-around mb-1 bg-white">
+    <div className="flex flex-col gap-2 shadow-md rounded-lg p-3 mt-4 justify-around mb-1 bg-white">
       <span className="text-5xl font-bold">Join Communities today!</span>
       <span className="text-xl">
         Connect with people who had similar experiences and make new friends!

@@ -15,26 +15,22 @@ const Main = () => {
 
   return (
     <>
-      {" "}
       {session ? (
-        <>
-          {" "}
-          <div className="flex flex-row h-max font-Poppins justify-center bg-gray-100">
-            <div className="flex flex-col justify-between items-center">
-              <ProfileCard />
-              <Navbar setComponent={setComponent} />
-            </div>
-            <div className="flex flex-col w-3/5">{component}</div>
+        <div className="flex flex-row font-Poppins w-full justify-center bg-gray-100 lg:px-16">
+          <div className="flex flex-col w-1/4 items-center">
+            <ProfileCard />
+            <Navbar setComponent={setComponent} />
+          </div>
+          <div className="flex-1 w-2/5">{component}</div>
+          <div className="">
             <News />
           </div>
-        </>
+        </div>
       ) : (
-        <>
-          <div className="w-screen h-5/6 flex flex-row justify-center items-center">
-            <div className="border-gray-300 h-20 w-20 animate-spin rounded-full border-8 border-t-blue-600" />
-          </div>
+        <div className="w-screen h-screen flex justify-center items-center">
+          <div className="border-gray-300 h-20 w-20 animate-spin rounded-full border-8 border-t-blue-600" />
           {router.push("/")}
-        </>
+        </div>
       )}
     </>
   );

@@ -3,7 +3,7 @@ import { IoCart } from "react-icons/io5";
 
 const Products = () => {
   return (
-    <div className="flex flex-col shadow-md rounded-lg p-3 m-4 mb-8 justify-around gap-2 bg-white">
+    <div className="flex flex-col shadow-md rounded-lg p-3 mt-4 mb-8 justify-around gap-2 bg-white">
       <span className="text-5xl font-bold">Introducing VentOut Merch!</span>
       <span className="text-xl">
         Discover a collection of VentOut-branded clothing and stress-relieving
@@ -21,7 +21,11 @@ const Products = () => {
           price="₹299"
           imgSrc="/tshirt2.png"
         />
-        <ProductCard name="You are Not alone (Limited Edition)" price="₹399" imgSrc="/tshirt3.png" />
+        <ProductCard
+          name="You are Not alone (Limited Edition)"
+          price="₹399"
+          imgSrc="/tshirt3.png"
+        />
         <ProductCard
           name="Be Kind to your Mind"
           price="₹399"
@@ -29,7 +33,11 @@ const Products = () => {
         />
         <ProductCard name="HOPE T-shirt" price="₹399" imgSrc="/1.png" />
         <ProductCard name="Self Love club" price="₹399" imgSrc="/2.png" />
-        <ProductCard name="Just keep moving forward" price="₹399" imgSrc="/3.png" />
+        <ProductCard
+          name="Just keep moving forward"
+          price="₹399"
+          imgSrc="/3.png"
+        />
         <ProductCard name="Believe in yourself" price="₹399" imgSrc="/4.png" />
       </div>
     </div>

@@ -35,8 +35,8 @@ const ProfileCard = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center w-11/12">
-      <section className="shadow-md rounded-lg mt-4 mb-4  bg-white">
+    <div className="flex flex-col items-center w-full">
+      <section className="shadow-md rounded-lg mt-4 mb-4 w-11/12 bg-white">
         <div className="flex flex-col items-center relative">
           <div className="overflow-hidden w-full h-2/3 absolute top-0 left-0">
             <div className="bg-pink-600 w-full h-20"></div>
