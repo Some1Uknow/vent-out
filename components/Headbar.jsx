@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import { RiEmotionHappyFill } from "react-icons/ri";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
@@ -6,16 +7,21 @@ import { useRouter } from "next/navigation";
 const Headbar = () => {
   const { data: session, status } = useSession();
   const router = useRouter();
+  const [redirect, setredirect] = useState(false);
 
   const handleSignOut = () => {
-    router.push("/");
     signOut("google");
+    redirect(!redirect);
   };
 
   const handleSignIn = async () => {
     router.push("/signedIn");
     signIn("google");
   };
+
+  if (redirect) {
+    router.push("/");
+  }
 
   return (
     <nav className="bg-gray-100 p-3.5 flex justify-between items-center shadow-xl border-b-2">

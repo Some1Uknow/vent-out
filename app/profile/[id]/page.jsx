@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 
 const EditProfile = ({ params }) => {
-  const {data: session} = useSession();
+  const { data: session } = useSession();
 
   const userId = params.id;
 
