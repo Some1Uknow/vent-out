@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
         name="google-site-verification"
         content="1PPU6Cx074TD5NKK7Rf4ELeYeGl2KYo9ixYwi4q2Qfc"
       />
-      <body>
+      <body suppressHydrationWarning={true}>
         <div>
           <NextAuthProvider>
             <Headbar />
